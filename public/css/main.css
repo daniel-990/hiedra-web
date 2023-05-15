@@ -1,0 +1,54 @@
+body{
+    font-family: 'Space Mono', monospace;
+    cursor: crosshair;
+}
+
+a:nth-of-type(1) {
+    cursor: url("/img/cursor.svg")  5 5, auto;
+}
+
+/* recursos para la tipografia */
+.fuente-web{
+    font-family: 'Space Mono', monospace;
+}
+
+/* demas elementos */
+.centrar-menu{
+    margin: 0px auto;
+}
+.menu-prpal{
+    margin-bottom: 2rem;
+}
+
+#botonera-menu a{
+    font-weight: 600;
+    color: black;
+    font-size: 1.1rem;
+    margin-left: 6rem;
+    text-align: center;
+}
+#botonera-menu a:hover{
+    color:#00ff7e;
+    text-decoration: underline;
+    cursor: url("/img/cursor.svg")  5 5, auto;
+}
+
+marquee{
+    font-size: 2rem;
+    position: fixed;
+    bottom: 1rem;
+}
+marquee a{
+    text-decoration: none;
+    color: #00ff7e;
+}
+.color-verde{
+    color:#00ff7e;
+}
+.texto-intro{
+    width: 100%;
+    margin: 0px auto;
+    text-align: justify;
+    margin-top: 5rem;
+    font-size: 1.3rem;
+}
