@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 const urlencodedParser = bodyParser.urlencoded({extended: true});
-app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.json()) // salida json
 const jsonParser = bodyParser.json();
 
 app.get('/', (req, res) => {

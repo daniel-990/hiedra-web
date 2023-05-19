@@ -45,10 +45,47 @@ marquee a{
 .color-verde{
     color:#00ff7e;
 }
+.color-negro{
+    color:black;
+}
 .texto-intro{
-    width: 100%;
+    width: 70%;
     margin: 0px auto;
     text-align: justify;
     margin-top: 5rem;
     font-size: 1.3rem;
+    position: fixed;
+}
+
+.galeria1 img:nth-child(1){
+    position: relative;
+    left: 10rem;
+    z-index: 1;
+    width: 26rem;
+}
+.galeria1 img:nth-child(2){
+    position: relative;
+    top: 10rem;
+    width: 26rem;
+}
+.galeria2{
+    position: relative; 
+    left: 5rem;
+    top: 11rem;
+}
+.galeria2 img:nth-child(1){
+    position: relative;
+    left: 8rem;
+    z-index: 1;
+    width: 34rem;
+}
+.galeria2 img:nth-child(2){
+    position: relative;
+    top: -8rem;
+    width: 26rem;
+    left: 6rem;
+}
+.contenedor-img{
+    position: relative;
+    z-index: -1;
 }
