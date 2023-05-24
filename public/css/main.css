@@ -49,10 +49,10 @@ marquee a{
     color:black;
 }
 .texto-intro{
-    width: 70%;
+    width: 88%;
     margin: 0px auto;
     text-align: justify;
-    margin-top: 5rem;
+    margin-top: 20rem;
     font-size: 1.3rem;
     position: fixed;
 }
@@ -87,5 +87,17 @@ marquee a{
 }
 .contenedor-img{
     position: relative;
+    z-index: -1;
+}
+.logo{
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    right: 0px;
+    top: 5rem;
+}
+.galeria-portafolio{
+    position: relative;
+    top: 20rem;
     z-index: -1;
 }
