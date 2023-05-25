@@ -3,7 +3,7 @@ body{
     cursor: crosshair;
 }
 
-a:nth-of-type(1) {
+a:nth-of-type(1), a:nth-of-type(2) {
     cursor: url("/img/cursor.svg")  5 5, auto;
 }
 
@@ -29,13 +29,9 @@ a:nth-of-type(1) {
 }
 .contenedor-img{
     position: relative;
-    z-index: -1;
+    z-index: 1;
     margin-top: 10rem;
 }
-.contenedor-img a{
-    /* width: 100%; */
-}
-
 .img_galeria{
     width: 100%;
 }
@@ -107,8 +103,18 @@ marquee a{
     top: 5rem;
 }
 #logo{
-    width: 15%;
+    width: 50%;
+    position: relative;
 }
+
+.cajon{
+    position:fixed;
+    top: 5rem;
+    background-repeat: no-repeat;
+    left: calc(50% - 100px);
+    z-index: 2;
+}
+
 .galeria-portafolio{
     position: relative;
     top: 0rem;
