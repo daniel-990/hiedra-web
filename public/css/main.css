@@ -20,6 +20,49 @@ a:nth-of-type(1) {
     margin-bottom: 2rem;
 }
 
+/* portafolios1 */
+.galeria-portafolio_1{
+    position: relative;
+}
+.galeria-portafolio_1 div.contenedor-img:nth-child(1){
+    margin-top: 0px;
+}
+.contenedor-img{
+    position: relative;
+    z-index: -1;
+    margin-top: 10rem;
+}
+.contenedor-img a{
+    /* width: 100%; */
+}
+
+.img_galeria{
+    width: 100%;
+}
+.galeria1 a:nth-child(1){
+    position: relative;
+    top: 1rem;
+    left: 5rem;
+}
+.galeria1 a:nth-child(2){
+    position: relative;
+    top: 10rem;
+    left: -5rem;
+}
+
+/* portafolios2 */
+.galeria2 a:nth-child(1){
+    position: relative;
+    top: 8rem;
+    left: 5rem;
+    z-index: 1;
+}
+.galeria2 a:nth-child(2){
+    position: relative;
+    top: 3rem;
+    left: -10rem;
+}
+
 #botonera-menu a{
     font-weight: 600;
     color: black;
@@ -49,45 +92,12 @@ marquee a{
     color:black;
 }
 .texto-intro{
-    width: 88%;
+    width: 100%;
     margin: 0px auto;
     text-align: justify;
     margin-top: 20rem;
     font-size: 1.3rem;
-    position: fixed;
-}
-
-.galeria1 img:nth-child(1){
-    position: relative;
-    left: 10rem;
-    z-index: 1;
-    width: 26rem;
-}
-.galeria1 img:nth-child(2){
-    position: relative;
-    top: 10rem;
-    width: 26rem;
-}
-.galeria2{
-    position: relative; 
-    left: 5rem;
-    top: 11rem;
-}
-.galeria2 img:nth-child(1){
-    position: relative;
-    left: 8rem;
-    z-index: 1;
-    width: 34rem;
-}
-.galeria2 img:nth-child(2){
-    position: relative;
-    top: -8rem;
-    width: 26rem;
-    left: 6rem;
-}
-.contenedor-img{
-    position: relative;
-    z-index: -1;
+    /* position: fixed; */
 }
 .logo{
     position: fixed;
@@ -96,8 +106,25 @@ marquee a{
     right: 0px;
     top: 5rem;
 }
+#logo{
+    width: 15%;
+}
 .galeria-portafolio{
     position: relative;
-    top: 20rem;
+    top: 0rem;
     z-index: -1;
+}
+
+@media screen and (max-width: 992px) {
+    .contenedor-img{
+        margin-top: 0px;
+    }
+    .galeria1 img:nth-child(1),
+    .galeria1 img:nth-child(2),
+    .galeria2 img:nth-child(1),
+    .galeria2 img:nth-child(2) {
+        width: 100%; 
+        top: 0px;
+        left: 0px;
+    }
 }
