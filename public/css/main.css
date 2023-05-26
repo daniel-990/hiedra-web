@@ -121,6 +121,30 @@ marquee a{
     z-index: -1;
 }
 
+.contenedor-detalle,.contenedor-info{
+    margin-top: 20rem;
+}
+.contenedor-info{
+    font-size: 24px;
+}
+.img-responsive{
+    width: 100%;
+}
+.img-prpal-portafolio{
+    padding: 10px;
+}
+.contenedor-miniaturas img{
+    padding: 10px;
+}
+.texto-portafolio{
+    padding: 10px;
+}
+.estilo{
+    font-style: italic;
+}
+footer{
+    padding: 2rem;
+}
 @media screen and (max-width: 992px) {
     .contenedor-img{
         margin-top: 0px;

@@ -22,9 +22,15 @@ const jsonParser = bodyParser.json();
 
 app.get('/', (req, res) => {
     res.render('pages/index');
-})
+});
 
+app.get('/portafolio', (req, res) => {
+    res.render('pages/portafolio');
+});
 
+app.get('/info', (req, res) => {
+    res.render('pages/info');
+});
 
 
 //corre el servidor
