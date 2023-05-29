@@ -13,7 +13,7 @@ $(document).ready(function(){
         if(sinDecimales <= 100.66){
             imgLogo.attr('src','/img/logo/c-02.svg');
         }
-    })
+    });
 
     // $("#gal1").hide();
     // $("#gal2").hide();

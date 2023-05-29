@@ -1,12 +1,23 @@
 <%- include('../partials/header') %>
 
-
 <section class="contenedor-detalle">
     <div class="container">
         <div class="contenido">
-            <div class="texto-portafolio">
-                <h1><b>La casa suena
-                Festival Auditum.</b>
+            <% data.forEach(function(datos) { %>
+
+                <div class="texto-portafolio">
+                    <h1><b><%= datos.titulo %></b></h1>
+                    <br>
+                    <%= datos.contenido %>
+                    <b>Proyecto:</b> <%= datos.proyecto %>
+                    <b>Cliente:</b> <%= datos.cliente %>
+                    <b>Impresión:</b> <%= datos.impresion %>
+                    <a href="<%= datos.url %>"><%= datos.url %></a>
+                </div>
+
+            <% }); %>
+            <!-- <div class="texto-portafolio">
+                <h1><b>La casa suena Festival Auditum.</b>
                 <span class="estilo">Medellín, 2020</span></h1>
                 <br>
                 Impreso para La Semana de la Escucha.
@@ -23,7 +34,7 @@
                 <div class="col-md-6"><img src="/img/portafolio/au05.jpg" class="img-responsive"></div>
                 <div class="col-md-6"><img src="/img/portafolio/au06.jpg" class="img-responsive"></div>
                 <div class="col-md-6"><img src="/img/portafolio/au09.jpg" class="img-responsive"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
