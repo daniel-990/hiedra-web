@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     const urlPost2 = "http://localhost:5000/ingresarportafolio?";
 
-
+    const idportafolio = document.getElementById("idportafolio");
     const titulo = document.getElementById("titulo");
     const url = document.getElementById("url");
     const tagurl = document.getElementById("tagurl");
@@ -22,6 +22,7 @@ $(document).ready(function(){
 
     const envioDatos = () =>{
         axios.post(urlPost2, {
+            idportafolio: idportafolio.value,
             titulo: titulo.value,
             url: url.value,
             tagurl: tagurl.value,
@@ -75,7 +76,7 @@ $(document).ready(function(){
         //     console.log(error);
         // });
 
-        axios.post('/upload_files', formData, {
+        axios.post('/upload_files?', formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             }

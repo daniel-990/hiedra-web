@@ -1,9 +1,9 @@
 {
     "servidordb": {
-        "host": "beyuusl8yxmhjijvgtrc-mysql.services.clever-cloud.com",
-        "user": "udjuftquhewloidt",
-        "password": "6RFfH16C9VwjdPCT6sZ1",
-        "database": "beyuusl8yxmhjijvgtrc"
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "hiedra"
     },
     "servidor":{
         "puerto": 5000
