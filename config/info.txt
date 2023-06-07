@@ -9,3 +9,16 @@
         "puerto": 5000
     }
 }
+
+//locales
+{
+    "servidordb": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "hiedra"
+    },
+    "servidor":{
+        "puerto": 5000
+    }
+}
