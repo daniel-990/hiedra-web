@@ -1,3 +1,4 @@
+//externos
 {
     "servidordb": {
         "host": "beyuusl8yxmhjijvgtrc-mysql.services.clever-cloud.com",

@@ -6,10 +6,10 @@
         <hr>
         <div class="row">
             <div class="col-3">
-                <form action="" method="POST">
+                <form action="/ingresarportafolio" method="POST">
                     <div class="mb-3">
-                        <label for="idportafolio" class="form-label">idportafolio</label>
-                        <input name="idportafolio" type="number" class="form-control" id="idportafolio" aria-describedby="idportafolio">
+                        <label for="idportafolio" class="form-label">idportafolio relacionado con la sesion del usuario</label>
+                        <input name="idportafolio" type="number" class="form-control" id="idportafolio" value="<%= user %>" aria-describedby="idportafolio" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="titulo-portafolio" class="form-label">Titulo</label>
@@ -73,13 +73,21 @@
             <div class="col-6">
                 <div id="render">
                     <% data.forEach(function(datos) { %>
-                            <h4><b><%= datos.titulo %></b></h4>
+                            <h4><b><%= datos.nombreUser %></b></h4>
                             <br>
-                            <%= datos.contenido %>
-                            <b>Proyecto:</b> <%= datos.proyecto %><br>
-                            <b>Cliente:</b> <%= datos.cliente %><br>
-                            <b>Impresión:</b> <%= datos.impresion %><br>
-                            <a href="<%= datos.url %>"><%= datos.url %></a>
+                            <b>Correo:</b> <%= datos.correo %><br>
+                            <b>Pass:</b> <%= datos.usuario %><br>
+                            <b>Data:</b> <%= datos.titulo %><br>
+                            <b>Data:</b> <%= datos.url %><br>
+                            <b>Data:</b> <%= datos.tagurl %><br>
+                            <b>Data:</b> <%= datos.contenido %><br>
+                            <b>Data:</b> <%= datos.proyecto %><br>
+                            <b>Data:</b> <%= datos.cliente %><br>
+                            <b>Data:</b> <%= datos.impresion %><br>
+                            <b>Data:</b> <%= datos.portafolio %><br>
+                            <b>Data:</b> <%= datos.nombreImg %><br>
+                            <b>Data:</b> <%= datos.rutaImg %><br>
+                            <b>Data:</b> <%= datos.imagenes %><br>
                             <hr>
                     <% }); %>
                 </div>
