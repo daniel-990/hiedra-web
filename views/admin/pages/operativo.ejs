@@ -5,70 +5,74 @@
         <h1>Admin plataforma</h1>
         <hr>
         <div class="row">
-            <div class="col-3">
-                <form action="/ingresarportafolio" method="POST">
-                    <div class="mb-3">
-                        <label for="idportafolio" class="form-label">idportafolio relacionado con la sesion del usuario</label>
-                        <input name="idportafolio" type="number" class="form-control" id="idportafolio" value="<%= user %>" aria-describedby="idportafolio" disabled>
+            <div class="col-6">
+                <form action="/ingresarportafolio" method="POST" id="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="idportafolio" class="form-label">idportafolio relacionado con la sesion del usuario</label>
+                                <input name="idportafolio" type="number" class="form-control" id="idportafolio" value="<%= user %>" aria-describedby="idportafolio" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="titulo-portafolio" class="form-label">Titulo</label>
+                                <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="url" class="form-label">url</label>
+                                <input name="url" type="text" class="form-control" id="url" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="url" class="form-label">Tagurl</label>
+                                <input name="tagurl" type="text" class="form-control" id="tagurl" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="proyecto" class="form-label">Proyecto</label>
+                                <input name="proyecto" type="text" class="form-control" id="proyecto" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cliente" class="form-label">Cliente</label>
+                                <input name="cliente" type="text" class="form-control" id="cliente" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="impresion" class="form-label">Impresion</label>
+                                <input name="Impresion" type="text" class="form-control" id="impresion" aria-describedby="emailHelp">
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <label for="contenido" class="form-label">Cotenido</label>
+                                <textarea name="contenido" class="form-control" id="contenido" cols="30" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="img1" class="form-label">img1</label>
+                                <input name="img1" class="form-control" type="file" id="img1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="img2" class="form-label">img2</label>
+                                <input name="img2" class="form-control" type="file" id="img2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="img3" class="form-label">img3</label>
+                                <input name="img3" class="form-control" type="file" id="img3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="img4" class="form-label">img4</label>
+                                <input name="img4" class="form-control" type="file" id="img4">
+                            </div>
+                            <div class="mb-3">
+                                <label for="img5" class="form-label">img5</label>
+                                <input name="img5" class="form-control" type="file" id="img5">
+                            </div>
+                            <div class="mb-3">
+                                <label for="img6" class="form-label">img6</label>
+                                <input name="img6" class="form-control" type="file" id="img6">
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="titulo-portafolio" class="form-label">Titulo</label>
-                        <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="url" class="form-label">url</label>
-                        <input name="url" type="text" class="form-control" id="url" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="url" class="form-label">Tagurl</label>
-                        <input name="tagurl" type="text" class="form-control" id="tagurl" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="proyecto" class="form-label">Proyecto</label>
-                        <input name="proyecto" type="text" class="form-control" id="proyecto" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="cliente" class="form-label">Cliente</label>
-                        <input name="cliente" type="text" class="form-control" id="cliente" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="impresion" class="form-label">Impresion</label>
-                        <input name="Impresion" type="text" class="form-control" id="impresion" aria-describedby="emailHelp">
-                    </div>
-                    <hr>
-                    <div class="mb-3">
-                        <label for="contenido" class="form-label">Cotenido</label>
-                        <textarea name="contenido" class="form-control" id="contenido" cols="30" rows="5"></textarea>
-                    </div>
-                    <input id="cargar" type="button" value="Cargar portafolio" class="btn btn-primary">
+                    <!-- <input id="cargar" type="button" value="Cargar portafolio" class="btn btn-primary"> -->
+                    <button id="cargar" class="submit-btn btn btn-primary" type='submit'>Cargar portafolio</button>
                 </form>
-            </div>
-            <div class="col-md-3">
-                <div class="mb-3">
-                    <label for="img1" class="form-label">img1</label>
-                    <input name="img1" class="form-control" type="file" id="img1">
-                </div>
-                <div class="mb-3">
-                    <label for="img2" class="form-label">img2</label>
-                    <input name="img2" class="form-control" type="file" id="img2">
-                </div>
-                <div class="mb-3">
-                    <label for="img3" class="form-label">img3</label>
-                    <input name="img3" class="form-control" type="file" id="img3">
-                </div>
-                <div class="mb-3">
-                    <label for="img4" class="form-label">img4</label>
-                    <input name="img4" class="form-control" type="file" id="img4">
-                </div>
-                <div class="mb-3">
-                    <label for="img5" class="form-label">img5</label>
-                    <input name="img5" class="form-control" type="file" id="img5">
-                </div>
-                <div class="mb-3">
-                    <label for="img6" class="form-label">img6</label>
-                    <input name="img6" class="form-control" type="file" id="img6">
-                </div>
-                <input id="cargar_img" type="button" value="Cargar img's" class="btn btn-primary">
             </div>
             <div class="col-6">
                 <div id="render">

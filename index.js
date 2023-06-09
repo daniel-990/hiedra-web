@@ -121,8 +121,14 @@ app.post('/ingresarportafolio', urlencodedParser, (req, res) =>{
         cliente: req.body.cliente,
         impresion: req.body.impresion,
         contenido: req.body.contenido,
+        img1: req.body.img1,
+        img2: req.body.img2,
+        img3: req.body.img3,
+        img4: req.body.img4,
+        img5: req.body.img5,
+        img6: req.body.img6,
     }
-
+    
     console.log(post);
 
     // conn.getConnection(() =>{
@@ -160,7 +166,7 @@ app.post('/carga', upload.array('img', 8), async (req, res) => {
         })
       } else {
         let data = []
-        console.log(img[0].originalname);
+        console.log(img);
         // recorrer img
         img.map(p =>
             data.push({

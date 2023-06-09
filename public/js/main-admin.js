@@ -48,7 +48,7 @@ $(document).ready(function(){
     //init
     btnEnviar.addEventListener('click', function(event){
         event.preventDefault();
-        envioDatos();
+        //envioDatos();
     });
 
 
@@ -64,7 +64,7 @@ $(document).ready(function(){
         formData.append("name", name.value);
         for(let i =0; i < files.files.length; i++) {
             formData.append("files", files.files[i]);
-            //console.log(files.files[i]);
+            console.log(files.files[i]);
         }
         // axios.post("http://localhost:5000/upload_files", {
         //     body:formData
@@ -76,14 +76,14 @@ $(document).ready(function(){
         //     console.log(error);
         // });
 
-        axios.post('/upload_files?', formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            }
-          })
-          .then(function (response) {
-            console.log(response);
-          });
+        // axios.post('/upload_files?', formData, {
+        //     headers: {
+        //       "Content-Type": "multipart/form-data",
+        //     }
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //   });
 
         // fetch("http://localhost:5000/upload_files", {
         //     method: 'POST',
