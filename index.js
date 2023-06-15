@@ -69,7 +69,7 @@ app.get('/admin', (req, res) => {
 
     conn.getConnection(() =>{
 
-        const sqlUser = `SELECT id FROM usuario WHERE id = ${req.query.id}`;
+        const sqlUser = `SELECT * FROM usuario WHERE id = ${req.query.id}`;
 
         conn.query(sqlUser, (err,result) => {
             if(err){
@@ -80,9 +80,12 @@ app.get('/admin', (req, res) => {
                 }
                 res.send(respuestaServidor);
             }else{
-                let Iduser = result[0].id
+                let Iduser = result[0].id;
+                let correo = result[0].correo;
+                let pass = result[0].pass;
+                let nombre = result[0].nombreUser;
 
-                conn.query(`SELECT U.nombreUser, U.correo, U.pass as 'usuario', P.titulo, P.url, P.tagurl, P.contenido, P.proyecto, P.cliente, P.impresion, P.portafoliocol as 'portafolio', I.nombreImg, I.rutaImg, I.base64 as 'imagenes' FROM usuario U JOIN portafolio P JOIN imagenes I ON U.id = ${Iduser}`, (err, result) =>{
+                conn.query(`SELECT U.nombreUser, U.correo, P.id, P.titulo, P.url, P.tagurl, P.contenido, P.proyecto, P.cliente, P.impresion FROM usuario U JOIN portafolio P ON U.id = ${Iduser}`, (err, result) =>{
                     if(err){
                         let respuestaServidor = {
                             codigo: 500,
@@ -95,13 +98,18 @@ app.get('/admin', (req, res) => {
                             codigo: 200,
                             error: false,
                             mensaje: result,
-                            usuarioApp: Iduser
-
+                            usuarioAppId: Iduser,
+                            correo: correo,
+                            pass: pass,
+                            nombre: nombre
                         }
-                        //res.send(respuestaServidor);
+                        // res.send(respuestaServidor);
                         res.render('admin/pages/operativo',{
                             data: respuestaServidor.mensaje,
-                            user: respuestaServidor.usuarioApp
+                            id: respuestaServidor.usuarioAppId,
+                            correo: respuestaServidor.correo,
+                            pass: respuestaServidor.pass,
+                            nombre: respuestaServidor.nombre
                         });
                     }
                 })
@@ -113,7 +121,7 @@ app.get('/admin', (req, res) => {
 
 app.post('/ingresarportafolio', urlencodedParser, (req, res) =>{
     let post = {
-        idportafolio: req.body.idportafolio,
+        idportafolio: req.body.asignaridportafolio,
         titulo: req.body.titulo,
         url: req.body.url,
         tagurl: req.body.tagurl,
@@ -121,6 +129,8 @@ app.post('/ingresarportafolio', urlencodedParser, (req, res) =>{
         cliente: req.body.cliente,
         impresion: req.body.impresion,
         contenido: req.body.contenido,
+        idusuario: req.body.idportafolio,
+        //datos de las  imagenes
         img1: req.body.img1,
         img2: req.body.img2,
         img3: req.body.img3,
@@ -128,30 +138,33 @@ app.post('/ingresarportafolio', urlencodedParser, (req, res) =>{
         img5: req.body.img5,
         img6: req.body.img6,
     }
-    
-    console.log(post);
 
-    // conn.getConnection(() =>{
-    //     conn.query("INSERT INTO portafolio(id_portafolio, titulo, url, tagurl, contenido, proyecto, cliente, impresion) VALUES ('"+post.idportafolio+"','"+post.titulo+"','"+post.url+"','"+post.tagurl+"','"+post.contenido+"','"+post.proyecto+"','"+post.cliente+"','"+post.impresion+"')",(err, result) =>{
-    //         if(err){
-    //             let respuestaServidor = {
-    //                 codigo: 500,
-    //                 error: err,
-    //                 mensaje: "registro no creado "
-    //             }
-    //             res.send(respuestaServidor);
-    //         }else{
-    //             let respuestaServidor = {
-    //                 codigo: 200,
-    //                 error: false,
-    //                 mensaje: "registro creado",
-    //                 dato: post,
-    //                 resultado: result
-    //             }
-    //             res.send(respuestaServidor);
-    //         }
-    //     })
-    // })
+    //condicion para el front
+
+
+    conn.getConnection(() =>{
+        conn.query(`INSERT INTO portafolio (id, titulo, url, tagurl, contenido, proyecto, cliente, impresion, usuario_id) VALUES ('${post.idportafolio}','${post.titulo}','${post.url}','${post.tagurl}','${post.proyecto}','${post.cliente}','${post.impresion}','${post.contenido}','${post.idusuario}')`,(err, result) =>{
+            if(err){
+                let respuestaServidor = { 
+                    codigo: 500,
+                    error: err,
+                    mensaje: "registro no creado"
+                }
+                res.send(respuestaServidor);
+                console.log(respuestaServidor.mensaje);
+            }else{
+                let respuestaServidor = {
+                    codigo: 200,
+                    error: false,
+                    mensaje: "registro creado",
+                    dato: post,
+                    resultado: result
+                }
+                res.send(respuestaServidor);
+                console.log("respuesta del servidor: ",respuestaServidor.codigo);
+            }
+        })
+    })
 });
 
 app.post('/carga', upload.array('img', 8), async (req, res) => {

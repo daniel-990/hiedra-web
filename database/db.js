@@ -14,7 +14,8 @@ const pool = mysql.createPool({
     host: host,
     user: user,
     password: pass,
-    database: database
+    database: database,
+    insecureAuth : true
 })
 
 pool.getConnection((err, connection) => {

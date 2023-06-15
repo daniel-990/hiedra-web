@@ -11,7 +11,7 @@
     }
 }
 
-//locales
+//locales - casa
 {
     "servidordb": {
         "host": "localhost",
@@ -23,3 +23,34 @@
         "puerto": 5000
     }
 }
+
+//locales - trabajo workbench
+{
+    "servidordb": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "password": "root",
+        "database": "beyuusl8yxmhjijvgtrc"
+    },
+    "servidor":{
+        "puerto": 5000
+    }
+}
+
+//consulta para validar usuario y activar privilegios:
+Ejecute la siguiente consulta en MYSQL Workbench
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+Donde root como su usuario localhost como su URL y password como su contraseña
+
+Luego ejecute esta consulta para actualizar los privilegios:
+
+flush privileges;
+
+Intente conectarse usando el nodo después de hacerlo.
+
+Si eso no funciona, inténtelo sin @'localhost'parte.
+-----
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+flush privileges;

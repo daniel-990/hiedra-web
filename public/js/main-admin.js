@@ -9,6 +9,8 @@ $(document).ready(function(){
     const proyecto = document.getElementById("proyecto");
     const cliente = document.getElementById("cliente");
     const impresion = document.getElementById("impresion");
+    const asignaridportafolio = document.getElementById("asignaridportafolio");
+    //imagenes
     const img1 = document.getElementById("img1");
     const img2 = document.getElementById("img2");
     const img3 = document.getElementById("img3");
@@ -20,7 +22,7 @@ $(document).ready(function(){
     const btnEnviar = document.getElementById("cargar");
 
 
-    const envioDatos = () =>{
+    const envioDatos = () => {
         axios.post(urlPost2, {
             idportafolio: idportafolio.value,
             titulo: titulo.value,
@@ -29,26 +31,31 @@ $(document).ready(function(){
             proyecto: proyecto.value,
             cliente: cliente.value,
             impresion: impresion.value,
+            contenido: contenido.value,
+            asignaridportafolio: asignaridportafolio.value,
             img1: img1.value,
             img2: img2.value,
             img3: img3.value,
             img4: img4.value,
             img5: img5.value,
-            img6: img6.value,
-            contenido: contenido.value
+            img6: img6.value
         })
         .then(function(response){
-            console.log(response);
+            if(response.data.codigo == 500){
+                alert(response.data.error.sqlMessage);
+                console.log(response.data.error);
+            }else{
+                console.log(response.data);
+            }
         })
         .catch(function(error){
-            console.log(error);
+            console.log("error: ",error);
         });
     }
 
     //init
     btnEnviar.addEventListener('click', function(event){
-        event.preventDefault();
-        //envioDatos();
+        envioDatos();
     });
 
 
@@ -62,7 +69,7 @@ $(document).ready(function(){
         const files = document.getElementById("files");
         const formData = new FormData();
         formData.append("name", name.value);
-        for(let i =0; i < files.files.length; i++) {
+        for(let i =0; i < files.files.length; i++){
             formData.append("files", files.files[i]);
             console.log(files.files[i]);
         }
