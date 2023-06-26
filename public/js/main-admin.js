@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     const urlPost2 = "http://localhost:5000/ingresarportafolio?";
 
-    const idportafolio = document.getElementById("idportafolio");
+    const idportafoliouser = document.getElementById("idportafoliouser");
     const titulo = document.getElementById("titulo");
     const url = document.getElementById("url");
     const tagurl = document.getElementById("tagurl");
@@ -24,7 +24,7 @@ $(document).ready(function(){
 
     const envioDatos = () => {
         axios.post(urlPost2, {
-            idportafolio: idportafolio.value,
+            idportafoliouser: idportafoliouser.value,
             titulo: titulo.value,
             url: url.value,
             tagurl: tagurl.value,
@@ -44,8 +44,10 @@ $(document).ready(function(){
             if(response.data.codigo == 500){
                 alert(response.data.error.sqlMessage);
                 console.log(response.data.error);
+                window.location.href = `/admin?id=${idportafoliouser.value}`;
             }else{
                 console.log(response.data);
+                window.location.href = `/registroexitoso?id=${response.data.dato.idusuario}`;
             }
         })
         .catch(function(error){
@@ -61,7 +63,7 @@ $(document).ready(function(){
 
     const form = document.getElementById("form");
 
-    form.addEventListener("submit", submitForm);
+    //form.addEventListener("submit", submitForm);
 
     function submitForm(e) {
         e.preventDefault();

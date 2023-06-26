@@ -1,1 +1,18 @@
-su registro fue creado
+<%- include('../partials/header') %>
+    <div class="container">
+        su registro fue creado
+        <div id="render">
+            <% data.forEach(function(datos) { %>
+                    <hr>
+                    <b>id portafolio:</b> <%= datos.id %><br>
+                    <b>titulo:</b> <%= datos.titulo %><br>
+                    <b>url:</b> <%= datos.url %><br>
+                    <b>tagurl:</b> <%= datos.tagurl %><br>
+                    <b>contenido:</b> <%= datos.contenido %><br>
+                    <b>proyecto:</b> <%= datos.proyecto %><br>
+                    <b>cliente:</b> <%= datos.cliente %><br>
+                    <b>impresion:</b> <%= datos.impresion %><br>
+            <% }); %>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

@@ -14,21 +14,4 @@ $(document).ready(function(){
             imgLogo.attr('src','/img/logo/c-02.svg');
         }
     });
-
-    // $("#gal1").hide();
-    // $("#gal2").hide();
-
-    // $("body").hover(function(){
-    //     $("#gal1").hide();
-    //     $("#gal2").hide();
-    // });
-
-    // $(".texto-intro p b a.color-negro").hover(function(){
-    //     $("#gal1").show();
-    //     $("#gal2").hide();
-    // });
-    // $(".texto-intro p b.btn2 a").hover(function(){
-    //     $("#gal2").show();
-    //     $("#gal1").hide();
-    // });
 });
